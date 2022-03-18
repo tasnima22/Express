@@ -44,7 +44,7 @@ describe("test person", () => {
             chai.request(server).post('/person/create').send().end((err, res) => {
               expect(err).to.be.null;
               expect(res).to.have.status(400);
-              expect(res).to.haveOwnProperty('text', 'Person validation failed: jobTitle: Path `jobTitle` is required., age: Path `age` is required., name: Path `name` is required.');
+              expect(res).to.haveOwnProperty('text', 'Person validation failed: age: Path `age` is required., name: Path `name` is required.');
               return done();
             });
           })
